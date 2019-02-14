@@ -80,9 +80,9 @@ public class CoursebuildApplication implements CommandLineRunner {
         userRepo.save(user1);
 
         UserDb user2 = new UserDb();
-        user1.setName("SuperMan");
-        user1.setYear(3);
-        user1.setEmail("SuperMan@live.com");
+        user2.setName("SuperMan");
+        user2.setYear(3);
+        user2.setEmail("SuperMan@live.com");
 
 
         userRepo.save(user2);
@@ -100,7 +100,7 @@ public class CoursebuildApplication implements CommandLineRunner {
        List<UserDb> results =  userRepo.findByEmailAndYear("SuperMan@live.com" , 3);
 
         for(UserDb userDb : results) {
-            LOG.info("Matching results are "+userDb.toString());
+            LOG.info("Matching results are : "+userDb.toString());
         }
     }
 }
